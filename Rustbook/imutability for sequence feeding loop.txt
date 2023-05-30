@@ -1,0 +1,35 @@
+Question 2
+
+Determine whether the program will pass the compiler. If it passes, write the expected output of the program if it were executed.
+
+fn main() {
+
+  let mut s = String::from("hello");
+
+  for &item in s.as_bytes().iter() {
+
+    if item == b'l' {
+
+      s.push_str(" world");
+
+    }
+
+  }
+
+  println!("{s}");
+
+}
+
+You answered:
+
+This program does compile.
+
+The output of this program will be:
+
+"Hello world"
+
+The correct answer is:
+
+This program does not compile.
+
+Context: Because s.as_bytes() produces an immutable reference to s, it is illegal to mutate s (via push_str) inside the for-loop.
